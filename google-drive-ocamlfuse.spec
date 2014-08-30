@@ -4,12 +4,12 @@
 
 Summary:	FUSE filesystem over Google Drive
 Name:		google-drive-ocamlfuse
-Version:	0.5.3
+Version:	0.5.5
 Release:	0.1
 License:	BSD
 Group:		Applications/Networking
 Source0:	https://github.com/astrada/google-drive-ocamlfuse/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	bfab031d01d8671d381e5e40eb23fd4b
+# Source0-md5:	5bd2b7df4e7c270b577e1a56dbbe8f27
 URL:		https://github.com/astrada/google-drive-ocamlfuse
 BuildRequires:	cppo >= 0.9.3
 BuildRequires:	ocaml >= 3.04-7
