@@ -61,14 +61,13 @@ tej biblioteki.
 
 %build
 ocaml setup.ml -configure \
-	--prefix %{_prefix} \
-	--destdir $RPM_BUILD_ROOT
+	--prefix $RPM_BUILD_ROOT/%{_prefix}
+
 ocaml setup.ml -build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-export OCAMLFIND_DESTDIR=$RPM_BUILD_ROOT%{_libdir}/ocaml
-install -d $OCAMLFIND_DESTDIR
+
 ocaml setup.ml -install
 
 %clean
