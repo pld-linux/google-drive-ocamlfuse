@@ -1,15 +1,19 @@
 #
 # Conditional build:
-%bcond_with	opt		# build opt
+%bcond_without	opt		# build opt
 
+%ifarch x32
+%undefine	with_opt
+%endif
 Summary:	FUSE filesystem over Google Drive
 Name:		google-drive-ocamlfuse
 Version:	0.6.19
-Release:	1
+Release:	2
 License:	BSD
 Group:		Applications/Networking
 Source0:	https://github.com/astrada/google-drive-ocamlfuse/archive/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	073edcd123b517adc37076b6be211500
+Patch0:		noopt-fuse.patch
 URL:		https://github.com/astrada/google-drive-ocamlfuse
 BuildRequires:	cppo >= 0.9.3
 BuildRequires:	ocaml >= 3.04-7
@@ -58,6 +62,7 @@ tej biblioteki.
 
 %prep
 %setup -q
+%{!?with_opt:%patch0 -p1}
 
 %build
 ocaml setup.ml -configure \

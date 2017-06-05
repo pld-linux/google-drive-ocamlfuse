@@ -1,0 +1,11 @@
+--- google-drive-ocamlfuse-0.6.19/myocamlbuild.ml.orig	2017-06-06 00:21:04.349434462 +0200
++++ google-drive-ocamlfuse-0.6.19/myocamlbuild.ml	2017-06-06 00:20:41.865494433 +0200
+@@ -645,6 +645,8 @@
+         (* When one link an OCaml library/binary/package, one should use
+          * -linkpkg *)
+         flag ["ocaml"; "link"; "program"] & A"-linkpkg";
++        flag ["ocaml"; "link"; "program"] & A"-warn-error";
++        flag ["ocaml"; "link"; "program"] & A"-a";
+ 
+         (* For each ocamlfind package one inject the -package option when
+          * compiling, computing dependencies, generating documentation and
