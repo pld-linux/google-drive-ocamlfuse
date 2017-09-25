@@ -7,12 +7,12 @@
 %endif
 Summary:	FUSE filesystem over Google Drive
 Name:		google-drive-ocamlfuse
-Version:	0.6.19
-Release:	2
+Version:	0.6.21
+Release:	1
 License:	BSD
 Group:		Applications/Networking
 Source0:	https://github.com/astrada/google-drive-ocamlfuse/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	073edcd123b517adc37076b6be211500
+# Source0-md5:	96d5a7c877d9f93b8f04dde67f96b725
 Patch0:		noopt-fuse.patch
 URL:		https://github.com/astrada/google-drive-ocamlfuse
 BuildRequires:	cppo >= 0.9.3
