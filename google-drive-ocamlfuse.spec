@@ -8,7 +8,7 @@
 Summary:	FUSE filesystem over Google Drive
 Name:		google-drive-ocamlfuse
 Version:	0.6.24
-Release:	1
+Release:	2
 License:	BSD
 Group:		Applications/Networking
 Source0:	https://github.com/astrada/google-drive-ocamlfuse/archive/v%{version}/%{name}-%{version}.tar.gz
@@ -63,8 +63,8 @@ tej biblioteki.
 
 %prep
 %setup -q
-%{!?with_opt:%patch0 -p1}
 %patch1 -p1 -R
+%{!?with_opt:%patch0 -p1}
 
 %build
 ocaml setup.ml -configure \
