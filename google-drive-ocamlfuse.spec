@@ -7,16 +7,17 @@
 %endif
 Summary:	FUSE filesystem over Google Drive
 Name:		google-drive-ocamlfuse
-Version:	0.6.21
+Version:	0.6.24
 Release:	1
 License:	BSD
 Group:		Applications/Networking
 Source0:	https://github.com/astrada/google-drive-ocamlfuse/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	96d5a7c877d9f93b8f04dde67f96b725
+# Source0-md5:	36d98c9b038993e4fa910259a4deab0e
 Patch0:		noopt-fuse.patch
+Patch1:		jbuilder.patch
 URL:		https://github.com/astrada/google-drive-ocamlfuse
 BuildRequires:	cppo >= 0.9.3
-BuildRequires:	ocaml >= 3.04-7
+BuildRequires:	ocaml >= 4.02.3
 BuildRequires:	ocaml-biniou-devel >= 1.0.6
 BuildRequires:	ocaml-cryptokit-devel >= 1.9
 BuildRequires:	ocaml-curl-devel >= 0.6.0
@@ -24,7 +25,7 @@ BuildRequires:	ocaml-easy-format-devel >= 1.0.1
 BuildRequires:	ocaml-extlib-devel >= 1.5.4
 BuildRequires:	ocaml-findlib >= 1.4
 BuildRequires:	ocaml-fuse-devel >= 2.7
-BuildRequires:	ocaml-gapi-ocaml-devel >= 0.2.14
+BuildRequires:	ocaml-gapi-ocaml-devel >= 0.3.5
 BuildRequires:	ocaml-idl-devel >= 1.05
 BuildRequires:	ocaml-sqlite-devel >= 2.0.4
 BuildRequires:	ocaml-xmlm-devel >= 1.1.1
@@ -63,6 +64,7 @@ tej biblioteki.
 %prep
 %setup -q
 %{!?with_opt:%patch0 -p1}
+%patch1 -p1 -R
 
 %build
 ocaml setup.ml -configure \
