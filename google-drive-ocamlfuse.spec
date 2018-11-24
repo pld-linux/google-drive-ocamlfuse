@@ -1,18 +1,11 @@
-#
-# Conditional build:
-%bcond_without	opt		# build opt
-
-%ifarch x32
-%undefine	with_opt
-%endif
 Summary:	FUSE filesystem over Google Drive
 Name:		google-drive-ocamlfuse
-Version:	0.6.24
-Release:	2
+Version:	0.7.1
+Release:	1
 License:	BSD
 Group:		Applications/Networking
 Source0:	https://github.com/astrada/google-drive-ocamlfuse/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	36d98c9b038993e4fa910259a4deab0e
+# Source0-md5:	acb4837c6717bc75cdcc4095beeee287
 Patch0:		noopt-fuse.patch
 Patch1:		jbuilder.patch
 URL:		https://github.com/astrada/google-drive-ocamlfuse
@@ -21,6 +14,7 @@ BuildRequires:	ocaml >= 4.02.3
 BuildRequires:	ocaml-biniou-devel >= 1.0.6
 BuildRequires:	ocaml-cryptokit-devel >= 1.9
 BuildRequires:	ocaml-curl-devel >= 0.6.0
+BuildRequires:	ocaml-dune
 BuildRequires:	ocaml-easy-format-devel >= 1.0.1
 BuildRequires:	ocaml-extlib-devel >= 1.5.4
 BuildRequires:	ocaml-findlib >= 1.4
@@ -64,19 +58,14 @@ tej biblioteki.
 
 %prep
 %setup -q
-%patch1 -p1 -R
-%{!?with_opt:%patch0 -p1}
 
 %build
-ocaml setup.ml -configure \
-	--prefix $RPM_BUILD_ROOT/%{_prefix}
-
-ocaml setup.ml -build
+dune build @install --verbose
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-ocaml setup.ml -install
+DESTDIR=$RPM_BUILD_ROOT dune install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
