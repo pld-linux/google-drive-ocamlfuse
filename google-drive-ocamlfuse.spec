@@ -6,8 +6,6 @@ License:	BSD
 Group:		Applications/Networking
 Source0:	https://github.com/astrada/google-drive-ocamlfuse/archive/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	acb4837c6717bc75cdcc4095beeee287
-Patch0:		noopt-fuse.patch
-Patch1:		jbuilder.patch
 URL:		https://github.com/astrada/google-drive-ocamlfuse
 BuildRequires:	cppo >= 0.9.3
 BuildRequires:	ocaml >= 4.02.3
