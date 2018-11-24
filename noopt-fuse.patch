@@ -1,0 +1,19 @@
+--- google-drive-ocamlfuse-0.7.1/src/dune~	2018-09-27 21:04:55.000000000 +0200
++++ google-drive-ocamlfuse-0.7.1/src/dune	2018-11-24 16:13:19.120287104 +0100
+@@ -3,3 +3,6 @@
+  (wrapped false)
+  (flags :standard -w -3-27-32-58)
+  (libraries cryptokit extlib gapi-ocaml Fuse sqlite3 threads camlidl))
++ (env
++  (dev
++   (flags (:standard -warn-error -A))))
+--- google-drive-ocamlfuse-0.7.1/bin/dune~	2018-09-27 21:04:55.000000000 +0200
++++ google-drive-ocamlfuse-0.7.1/bin/dune	2018-11-24 16:15:32.031740849 +0100
+@@ -6,3 +6,7 @@
+ (install
+  (section bin)
+  (files (gdfuse.exe as google-drive-ocamlfuse)))
++
++(env
++ (dev
++  (flags (:standard -warn-error -A))))
