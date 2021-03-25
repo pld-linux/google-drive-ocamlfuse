@@ -24,7 +24,7 @@ BuildRequires:	ocaml-dune
 BuildRequires:	ocaml-easy-format-devel >= 1.0.1
 BuildRequires:	ocaml-extlib-devel >= 1.5.4
 BuildRequires:	ocaml-findlib >= 1.4
-BuildRequires:	ocaml-fuse-devel >= 2.7
+BuildRequires:	ocaml-fuse-devel >= 2.7.1-3
 BuildRequires:	ocaml-gapi-ocaml-devel >= 0.3.5
 BuildRequires:	ocaml-idl-devel >= 1.05
 BuildRequires:	ocaml-sqlite-devel >= 2.0.4
