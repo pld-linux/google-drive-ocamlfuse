@@ -3,7 +3,7 @@
 @@ -3,3 +3,6 @@
   (wrapped false)
   (flags :standard -w -3-27-32-58)
-  (libraries cryptokit extlib gapi-ocaml Fuse sqlite3 threads camlidl))
+  (libraries cryptokit extlib gapi-ocaml ocamlfuse sqlite3 threads camlidl))
 + (env
 +  (dev
 +   (flags (:standard -warn-error -A))))
