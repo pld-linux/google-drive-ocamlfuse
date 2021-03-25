@@ -7,12 +7,12 @@
 %endif
 Summary:	FUSE filesystem over Google Drive
 Name:		google-drive-ocamlfuse
-Version:	0.7.1
+Version:	0.7.26
 Release:	1
 License:	BSD
 Group:		Applications/Networking
 Source0:	https://github.com/astrada/google-drive-ocamlfuse/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	acb4837c6717bc75cdcc4095beeee287
+# Source0-md5:	054f9e28af9c571547e365448ff17993
 Patch0:		noopt-fuse.patch
 URL:		https://github.com/astrada/google-drive-ocamlfuse
 BuildRequires:	cppo >= 0.9.3
@@ -27,10 +27,9 @@ BuildRequires:	ocaml-findlib >= 1.4
 BuildRequires:	ocaml-fuse-devel >= 2.7
 BuildRequires:	ocaml-gapi-ocaml-devel >= 0.3.5
 BuildRequires:	ocaml-idl-devel >= 1.05
-BuildRequires:	ocaml-ounit
 BuildRequires:	ocaml-sqlite-devel >= 2.0.4
-BuildRequires:	ocaml-xmlm-devel >= 1.1.1
 BuildRequires:	ocaml-yojson-devel >= 1.1.6
+BuildRequires:	ocaml-zarith-devel
 %requires_eq	ocaml-runtime
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
