@@ -8,7 +8,7 @@
 Summary:	FUSE filesystem over Google Drive
 Name:		google-drive-ocamlfuse
 Version:	0.7.26
-Release:	2
+Release:	3
 License:	BSD
 Group:		Applications/Networking
 Source0:	https://github.com/astrada/google-drive-ocamlfuse/archive/v%{version}/%{name}-%{version}.tar.gz
@@ -63,7 +63,10 @@ tej biblioteki.
 
 %prep
 %setup -q
-%{!?with_opt:%patch0 -p1}
+%{!?with_opt:%patch -P0 -p1}
+
+%{__mv} doc/Headless-Usage-{\&,and}-Authorization.md
+%{__mv} doc/What{\',}s-new.md
 
 %build
 dune build @install --verbose
